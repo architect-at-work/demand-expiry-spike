@@ -1,6 +1,7 @@
-package org.cencosud.demandexpiry;
+package org.cencosud.demandexpiry.redis;
 
 import lombok.extern.slf4j.Slf4j;
+import org.cencosud.demandexpiry.Demand;
 import org.springframework.context.event.EventListener;
 import org.springframework.data.redis.core.RedisKeyExpiredEvent;
 import org.springframework.stereotype.Component;
