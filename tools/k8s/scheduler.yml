@@ -1,0 +1,20 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: demand-expiry-job
+spec:
+  schedule: "* * * * *"
+  successfulJobsHistoryLimit: 1
+  failedJobsHistoryLimit: 5
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+            - name: demand-expiry
+              image: demand-expiry:latest
+              imagePullPolicy: IfNotPresent
+              env:
+                - name: REDIS_HOST
+                  value: host.docker.internal
+          restartPolicy: OnFailure

@@ -21,6 +21,11 @@ public class Demand {
     private String id;
 
     private Status status;
+
+    public Demand updateStatus(Status status) {
+        this.status = status;
+        return this;
+    }
 }
 
 

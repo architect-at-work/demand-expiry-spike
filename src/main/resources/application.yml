@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: demand-expiry
+  main:
+    banner-mode: off
+  data:
+    redis:
+      host: ${REDIS_HOST:localhost}
+
